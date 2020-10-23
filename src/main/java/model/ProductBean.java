@@ -11,11 +11,11 @@ import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
-@Named(value = "productBean")
-@SessionScoped
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Data
+//@Named("productBean")
+//@SessionScoped
 public class ProductBean implements Serializable {
 
     private List<ProductForStand> productList;
@@ -28,4 +28,11 @@ public class ProductBean implements Serializable {
         productList.add(productForStand);
     }
 
+    public List<ProductForStand> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(List<ProductForStand> productList) {
+        this.productList = productList;
+    }
 }
