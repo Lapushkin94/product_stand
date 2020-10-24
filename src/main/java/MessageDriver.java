@@ -13,11 +13,11 @@ import javax.jms.MessageListener;
         @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue")})
 public class MessageDriver implements MessageListener {
 
-//    @EJB
-//    ProductsService productsService;
-//
-//    @EJB
-//    MainPageService mainPageService;
+    @EJB
+    ProductsService productsService;
+
+    @EJB
+    MainPageService mainPageService;
 
     @PostConstruct
     @Override
@@ -25,7 +25,7 @@ public class MessageDriver implements MessageListener {
 
         System.out.println("success");
 
-//        productsService.updateProducts();
+        productsService.updateProducts();
 
 //        mainPageService.refreshPage();
 

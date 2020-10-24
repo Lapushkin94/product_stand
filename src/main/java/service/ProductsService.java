@@ -18,8 +18,8 @@ import java.util.List;
 @Singleton
 public class ProductsService {
 
-//    @EJB
-//    private ProductBean productBean;
+    @EJB
+    private ProductBean productBean;
 
     @SuppressWarnings("unchecked")
     public void updateProducts() {
@@ -37,7 +37,7 @@ public class ProductsService {
 
     @PostConstruct
     public void showBeanInfo() {
-//        System.out.println(productBean);
+//        System.out.println(productBean.getProductList());
     }
 
 
