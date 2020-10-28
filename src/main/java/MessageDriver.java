@@ -1,6 +1,3 @@
-import service.MainPageService;
-import service.ProductsService;
-
 import javax.annotation.PostConstruct;
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.EJB;
@@ -16,14 +13,12 @@ public class MessageDriver implements MessageListener {
     @EJB
     ProductsService productsService;
 
-    @EJB
-    MainPageService mainPageService;
+//    @EJB
+//    MainPageService mainPageService;
 
     @PostConstruct
     @Override
     public void onMessage(Message message) {
-
-        System.out.println("success");
 
         productsService.updateProducts();
 
