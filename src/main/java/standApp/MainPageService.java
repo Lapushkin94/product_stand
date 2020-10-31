@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 public class MainPageService {
 
     @Inject
-    @Push(channel = "push")
+    @Push
     private PushContext push;
 
     Logger logger = Logger.getLogger(MainPageService.class.getName());
