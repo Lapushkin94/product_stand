@@ -13,7 +13,7 @@
 
    <h1>Top products</h1>
 
-   <h:dataTable value="#{productBean.productList}" var="prod"
+   <h:dataTable id="products" value="#{productBean.productList}" var="prod"
                 styleClass="product-table"
                 headerClass="product-table-header"
                 rowClasses="product-table-odd-row,product-table-even-row"
@@ -29,8 +29,14 @@
          #{prod.price}
       </h:column>
 
-
    </h:dataTable>
+
+      <f:websocket channel="push" onmessage="updateList" />
+      <script type="text/javascript">
+         function updateList() {
+            location.reload();
+         }
+      </script>
 
 </h:body>
 </html>

@@ -15,16 +15,15 @@ public class MessageDriver implements MessageListener {
     @EJB
     ProductsService productsService;
 
-//    @EJB
-//    MainPageService mainPageService;
+    @EJB
+    MainPageService mainPageService;
 
-//    @PostConstruct
     @Override
     public void onMessage(Message message) {
 
         productsService.updateProducts();
 
-//        mainPageService.refreshPage();
+        mainPageService.refreshPage();
 
     }
 
