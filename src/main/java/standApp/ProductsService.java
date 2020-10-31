@@ -48,27 +48,8 @@ public class ProductsService {
     @PostConstruct
     public void getStartData() {
 
-        logger.info("getting start data, creating client");
-        Client client = ClientBuilder.newClient();
-        WebTarget myResource = client.target("http://localhost:8888/showProductStand");
-
-        // try - catch response
-        try {
-            logger.info("try start");
-            logger.info("getting array list");
-
-            List<ProductForStand> response = Arrays.asList(myResource.request().get(ProductForStand[].class));
-
-            logger.info("got array list + setting product bean");
-            productBean.setProductList(response);
-            logger.info("product bean added");
-        }
-        catch (Exception exc) {
-            logger.info("fail: " + exc.getMessage());
-        }
-
-        client.close();
-
+        logger.info("getting start data");
+        updateProducts();
         logger.info("got start info");
     }
 

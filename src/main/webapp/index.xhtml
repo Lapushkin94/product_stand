@@ -1,42 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
+<html xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
 >
 <h:head>
-   <h:outputStylesheet library="css" name="table-style.css" />
+    <h:outputStylesheet library="css" name="table-style.css"/>
 </h:head>
 <h:body>
 
-   <h1>Top products</h1>
+    <h1>Top products</h1>
 
-   <h:dataTable id="products" value="#{productBean.productList}" var="prod"
-                styleClass="product-table"
-                headerClass="product-table-header"
-                rowClasses="product-table-odd-row,product-table-even-row"
-   >
+    <h:dataTable id="products" value="#{productBean.productList}" var="prod"
+                 styleClass="product-table"
+                 headerClass="product-table-header"
+                 rowClasses="product-table-odd-row,product-table-even-row"
+    >
 
-      <h:column>
-         <f:facet name="header">Product Name</f:facet>
-         #{prod.name}
-      </h:column>
+        <h:column>
+            <f:facet name="header">Product Name</f:facet>
+            ${prod.name}
+        </h:column>
 
-      <h:column>
-         <f:facet name="header">Price</f:facet>
-         #{prod.price}
-      </h:column>
+        <h:column>
+            <f:facet name="header">Price</f:facet>
+            ${prod.price}
+        </h:column>
 
-   </h:dataTable>
+    </h:dataTable>
 
-      <f:websocket channel="push" onmessage="updateList" />
-      <script type="text/javascript">
-         function updateList() {
-            location.reload();
-         }
-      </script>
+
+   <f:websocket channel="push" onmessage="updateList()"/>
+   <script type="text/javascript">
+      function updateList() {
+         location.reload();
+      }
+   </script>
+
+    <!--   <f:websocket channel="push" onmessage="function() {-->
+    <!--        location.reload();-->
+    <!--   }" />-->
+
+
+    <!--         <f:websocket channel="push" onmessage="function updateList() {-->
+    <!--           location.reload();-->
+    <!--         }" />-->
 
 </h:body>
 </html>
