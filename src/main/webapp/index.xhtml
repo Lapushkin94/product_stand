@@ -33,7 +33,9 @@
    <f:websocket channel="push" onmessage="updateList()"/>
    <script type="text/javascript">
       function updateList() {
-         location.reload();
+          console.log("before reload in js func")
+         location.reload(true);
+          console.log("after reload in js func")
       }
    </script>
 
