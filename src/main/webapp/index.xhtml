@@ -6,25 +6,54 @@
 >
 
 <h:head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+    <script type="" src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </h:head>
 
 <h:body>
 
-    <h1>Top products</h1>
+    <div class="row border border-default col-4" style="margin-top: 30px; margin-left: 500px" >
 
-    <h:dataTable id="products" value="#{productBean.productList}" var="prod">
+        <div class="text-center p-2 col-md-2" style="background-color: burlywood">
+        </div>
+        <div class="text-center p-2 col-md-8" style="background-color: burlywood">
+            <p class="lead text-black"><h2>Bookstore advertisement</h2></p>
+        </div>
+        <div class="text-center p-2 col-md-2" style="background-color: burlywood">
+        </div>
 
-        <h:column>
-            <f:facet name="header">Product Name</f:facet>
-            ${prod.name}
-        </h:column>
+        <div class="text-center p-2 col-md-2 text-white border-top" style="background-color: wheat">
+        </div>
+        <div class="text-center p-2 col-md-8 text-black border-top" style="background-color: wheat">
+            <p><h5>Top products by purshase count</h5></p>
+        </div>
+        <div class="text-center p-2 col-md-2 text-white border-top" style="background-color: wheat">
+        </div>
 
-        <h:column>
-            <f:facet name="header">Price</f:facet>
-            ${prod.price}
-        </h:column>
+        <div class="bg-secondary text-white p-2 mb-6 col-6 text-center d-none d-sm-block">
+            <p><h5>Book name</h5></p>
+        </div>
+        <div class="bg-secondary text-white p-2 mb-6 col-6 text-center d-none d-sm-block">
+            <p><h5>Book price</h5></p>
+        </div>
 
-    </h:dataTable>
+        <h:dataTable value="#{productBean.productList}" var="prod" style="width: 550px">
+
+            <h:column>
+                <div class="py-1 even col-9 text-center">
+                    <p class="mark text-black lead font-weight-bold">${prod.name}</p>
+                </div>
+            </h:column>
+
+            <h:column>
+                <div class="py-1 even col-9 text-center">
+                    <p class="mark text-black lead font-weight-bold">${prod.price}</p>
+                </div>
+            </h:column>
+
+        </h:dataTable>
+</div>
 
     <script type="text/javascript">
         function updateList() {
