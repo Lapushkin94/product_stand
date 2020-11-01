@@ -18,7 +18,7 @@ public class MessageDriver implements MessageListener {
     @EJB
     MainPageService mainPageService;
 
-    Logger logger = Logger.getLogger(MessageDriver.class.getName());
+    private Logger logger = Logger.getLogger(MessageDriver.class.getName());
 
     @Override
     public void onMessage(Message message) {

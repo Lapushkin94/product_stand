@@ -26,14 +26,14 @@
 
     </h:dataTable>
 
-   <f:websocket channel="push" onmessage="updateList"/>
-   <script type="text/javascript">
-      function updateList() {
-          console.log("before reload in js func")
-         location.reload(true);
-          console.log("after reload in js func")
-      }
-   </script>
+    <script type="text/javascript">
+        function updateList() {
+            console.log("reloading");
+            location.reload(true);
+        }
+    </script>
+
+    <f:websocket channel="push" onmessage="updateList"/>
 
 
 </h:body>

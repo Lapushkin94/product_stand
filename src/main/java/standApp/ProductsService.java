@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 @Singleton
 public class ProductsService {
 
-    Logger logger = Logger.getLogger(ProductsService.class.getName());
+    private Logger logger = Logger.getLogger(ProductsService.class.getName());
     private ProductBean productBean = new ProductBean();
 
     @SuppressWarnings("unchecked")
@@ -50,7 +50,6 @@ public class ProductsService {
 
         logger.info("getting start data");
         updateProducts();
-        logger.info("got start info");
     }
 
 }

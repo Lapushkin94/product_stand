@@ -13,12 +13,11 @@ public class MainPageService {
     @Push
     private PushContext push;
 
-    Logger logger = Logger.getLogger(MainPageService.class.getName());
+    private Logger logger = Logger.getLogger(MainPageService.class.getName());
 
     public void refreshPage() {
-        logger.info("before push");
+        logger.info("pushing to jsf");
         push.send("updateProducts");
-        logger.info("after push");
     }
 
 }
